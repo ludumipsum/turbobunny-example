@@ -1,0 +1,33 @@
+<div class="card">
+    <div class="card-header align-bottom">
+        <a href="/index" class="btn btn-light float-left mr-2">
+            &larr;
+        </a>
+        <h3 class="card-title">All Commands</h3>
+    </div>
+    <div class="card-body">
+        <div class="list-group list-group-flush">
+            {{#each this}}
+            <a class="list-group-item list-group-item-action flex-column align-items-start" href="/cmd?q={{example}}">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">
+                        <span>
+                            {{#each matchers}}
+                            {{#if @index}} / {{/if}}{{this}}
+                            {{/each}}
+                        </span>
+                    </h5>
+                    <small>{{example}}</small>
+                </div>
+                <p class="mb-1">{{description}}</p>
+            </a>
+            {{/each}}
+        </div>
+    </div>
+</div>
+
+<script>
+    $('#run_cmd').on('click', function (evt) {
+        location.href = "/cmd?q=" + $("#q").val();
+    })
+</script>

@@ -1,0 +1,82 @@
+# Immediately enable "Unstable" features, and lock in to verison 1.0.0.
+# The release process for rustfmt seems to be "When I feel like it", and I'm not
+# a fan of being caught off-guard by renames and deprecations.
+
+unstable_features = true
+required_version = "1.0.0"
+edition = "2018"
+
+# Features are broken up into Stable and Unstable features, listed in order of
+# appearance in the Configuring Rustfmt document (link below). Features that are
+# commented out list their default value.
+# https://github.com/rust-lang-nursery/rustfmt/blob/master/Configurations.md
+
+## Stables Features
+
+use_small_heuristics = "Default"    # Default
+force_explicit_abi = true           # Default
+hard_tabs = false                   # Default
+max_width = 80
+merge_derives = true                # Default
+newline_style = "Auto"              # Default
+remove_nested_parens = true         # Default
+reorder_imports = true              # Default
+reorder_modules = true              # Default
+tab_spaces = 4                      # Default
+use_field_init_shorthand = false
+use_try_shorthand = true
+
+
+## Unstables Features
+
+# indent_style = "Block"
+# binop_separator = "Front"
+combine_control_expr = false
+# comment_width = 80
+condense_wildcard_suffixes = true
+# control_brace_style = "AlwaysSameLine"
+error_on_line_overflow = true
+error_on_unformatted = true
+# fn_args_density = "Tall"
+# brace_style = "SameLineWhere"
+# empty_item_single_line = true
+enum_discrim_align_threshold = 20
+fn_single_line = true
+# where_single_line = false
+format_strings = true
+# format_macro_matchers = false
+# format_macro_bodies = true
+# imports_indent = "Block"
+imports_layout = "HorizontalVertical"
+merge_imports = true
+match_block_trailing_comma = true
+# force_multiline_blocks = false
+# normalize_comments = false
+# reorder_impl_items = false
+report_todo = "Unnumbered"
+report_fixme = "Unnumbered"
+# skip_children = false
+# space_after_colon = true
+# space_before_colon = false
+struct_field_align_threshold = 0
+# spaces_around_ranges = false
+# struct_lit_single_line = true
+# trailing_comma = "Vertical"
+# trailing_semicolon = true
+# type_punctuation_density = "Wide"
+# format_doc_comments = false
+wrap_comments = true
+# match_arm_blocks = true
+# overflow_delimited_expr = false
+blank_lines_upper_bound = 3
+blank_lines_lower_bound = 0
+# hide_parse_errors = false
+# color = "Auto"
+# unstable_features = false
+# license_template_path = ""
+normalize_doc_attributes = true
+
+ignore = [
+    "vendor",
+    "target",
+]

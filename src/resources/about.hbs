@@ -1,0 +1,92 @@
+<div class="card">
+    <div class="card-header">
+        <h1 class="h2">Hello, TurboBunny!</h1>
+        <small class="text-muted">
+            TurboBunny gives your browser shell aliases.
+        </small>
+    </div>
+    <div class="list-group list-group-flush">
+        <a class="list-group-item list-group-item-action flex-column align-items-start" href="/">
+            <div class="d-flex w-100 justify-content-between">
+                <h2 class="h5 mb-1">
+                    About TurboBunny
+                </h2>
+                <small>
+                    This page
+                    &mdash; <code>/</code>
+                </small>
+            </div>
+        </a>
+        <a class="list-group-item list-group-item-action flex-column align-items-start" href="/list">
+            <div class="d-flex w-100 justify-content-between">
+                <h2 class="h5 mb-1">
+                    List Commands
+                </h2>
+                <small>
+                    <code>/list</code>
+                </small>
+            </div>
+            <p class="mb-1">{{description}}</p>
+        </a>
+        <div class="list-group-item flex-column align-items-start">
+            <div class="mb-2 d-flex w-100 justify-content-between">
+                <h2 class="h5 mb-1">
+                    Invoke Command
+                </h2>
+                <small>
+                    <code>/cmd</code>
+                    or
+                    <code>/check</code>
+                </small>
+            </div>
+            <div class="input-group mb-3 d-flex w-100">
+                <input type="text" class="form-control" id="q" placeholder="g pictures of cats" autocomplete="off" />
+                <button type="button" id="check_cmd" class="btn btn-light btn-sm">Check</button>
+                <button type="button" id="run_cmd" class="btn btn-light btn-sm">Run</button>
+            </div>
+        </div>
+        <div class="list-group-item flex-column align-items-start" href="/">
+            <div class="mb-2 d-flex w-100 justify-content-between">
+                <h2 class="h5">
+                    Installing as Browser Search
+                </h2>
+            </div>
+            <p class="small">
+                TurboBunny is written to be used as your browser's default
+                search engine, so you can run quicklinks... quickly.</p>
+            <p class="small">
+                To that end, we support OpenSearch, so your browser should
+                already be offering to configure turbobunny as a search engine!
+            </p>
+            <p class="small">
+                Try the hamburger menu in the URL bar!
+            </p>
+        </div>
+        <div class="list-group-item flex-column align-items-start" href="/">
+            <div class="mb-2 d-flex w-100 justify-content-between">
+                <h2 class="h5">
+                    Adding Commands
+                </h2>
+            </div>
+            <p class="small">
+                Right now the list of commands is <mark>fixed when turbobunny is
+                    deployed</mark>, but soon we're going to add support for
+                persistence using a database, and online editing after that!
+            </p>
+            <p class="small">
+                Today if you want to make changes, grab the sources and edit
+                <span class="text-monospace">src/commands.rs</span> to add your
+                new command.
+            </p>
+        </div>
+    </div>
+</div>
+
+<script>
+    $('#check_cmd').on('click', function (evt) {
+        location.href = "/check?q=" + $("#q").val();
+    })
+    $('#run_cmd').on('click', function (evt) {
+        location.href = "/cmd?q=" + $("#q").val();
+    })
+</script>

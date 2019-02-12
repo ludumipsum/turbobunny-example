@@ -1,0 +1,6 @@
+/.cargo/config
+/rls
+/target
+**/*.rs.bk
+*.log
+.env

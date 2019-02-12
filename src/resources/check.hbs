@@ -1,0 +1,18 @@
+<div class="card">
+    <h3 class="card-header">Matched Command</h3>
+    <div class="card-body">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item list-group-item-action flex-column align-items-start" href="/cmd?q={{example}}">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">
+                        {{#each matchers}}
+                        <span>{{this}}</span>
+                        {{/each}}
+                    </h5>
+                    <small>{{example}}</small>
+                </div>
+                <p class="mb-1">{{description}}</p>
+            </a>
+        </div>
+    </div>
+</div>
